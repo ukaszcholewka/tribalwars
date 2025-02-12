@@ -3,10 +3,6 @@ class Screen {
   page = "none";
   constructor() {
     this.reload();
-    window.addEventListener("navigate", () => {
-      this.reload();
-      console.log("navigate", this.page);
-    });
   }
   params() {
     const { search } = window.location;
@@ -15,6 +11,7 @@ class Screen {
   }
   reload() {
     this.page = this.params().get("screen") || "none";
+    console.log(this.page);
   }
 }
 

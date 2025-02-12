@@ -5,10 +5,6 @@ export default class Screen {
 
   public constructor() {
     this.reload()
-    window.addEventListener('navigate', () => {
-      this.reload()
-      console.log('navigate', this.page)
-    })
   }
 
   public params() {
@@ -19,5 +15,6 @@ export default class Screen {
 
   public reload() {
     this.page = (this.params().get('screen') as Page) || "none"
+    console.log(this.page)
   }
 }
